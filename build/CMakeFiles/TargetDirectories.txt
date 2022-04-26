@@ -1,0 +1,3 @@
+/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles/curses-demo.dir
+/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles/edit_cache.dir
+/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles/rebuild_cache.dir
