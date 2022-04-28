@@ -81,12 +81,12 @@ clean: CMakeFiles/curses-demo.dir/clean
 CMakeFiles/curses-demo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=1,2,3 "Built target curses-demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target curses-demo"
 .PHONY : CMakeFiles/curses-demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/curses-demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/curses-demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles 0
 .PHONY : CMakeFiles/curses-demo.dir/rule

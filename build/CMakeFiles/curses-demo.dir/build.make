@@ -69,24 +69,10 @@ include CMakeFiles/curses-demo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/curses-demo.dir/flags.make
 
-CMakeFiles/curses-demo.dir/src/board.cpp.o: CMakeFiles/curses-demo.dir/flags.make
-CMakeFiles/curses-demo.dir/src/board.cpp.o: ../src/board.cpp
-CMakeFiles/curses-demo.dir/src/board.cpp.o: CMakeFiles/curses-demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/curses-demo.dir/src/board.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/curses-demo.dir/src/board.cpp.o -MF CMakeFiles/curses-demo.dir/src/board.cpp.o.d -o CMakeFiles/curses-demo.dir/src/board.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/board.cpp
-
-CMakeFiles/curses-demo.dir/src/board.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/curses-demo.dir/src/board.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/board.cpp > CMakeFiles/curses-demo.dir/src/board.cpp.i
-
-CMakeFiles/curses-demo.dir/src/board.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/curses-demo.dir/src/board.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/board.cpp -o CMakeFiles/curses-demo.dir/src/board.cpp.s
-
 CMakeFiles/curses-demo.dir/src/main.cpp.o: CMakeFiles/curses-demo.dir/flags.make
 CMakeFiles/curses-demo.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/curses-demo.dir/src/main.cpp.o: CMakeFiles/curses-demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/curses-demo.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/curses-demo.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/curses-demo.dir/src/main.cpp.o -MF CMakeFiles/curses-demo.dir/src/main.cpp.o.d -o CMakeFiles/curses-demo.dir/src/main.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/main.cpp
 
 CMakeFiles/curses-demo.dir/src/main.cpp.i: cmake_force
@@ -97,21 +83,67 @@ CMakeFiles/curses-demo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/curses-demo.dir/src/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/main.cpp -o CMakeFiles/curses-demo.dir/src/main.cpp.s
 
+CMakeFiles/curses-demo.dir/src/game.cpp.o: CMakeFiles/curses-demo.dir/flags.make
+CMakeFiles/curses-demo.dir/src/game.cpp.o: ../src/game.cpp
+CMakeFiles/curses-demo.dir/src/game.cpp.o: CMakeFiles/curses-demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/curses-demo.dir/src/game.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/curses-demo.dir/src/game.cpp.o -MF CMakeFiles/curses-demo.dir/src/game.cpp.o.d -o CMakeFiles/curses-demo.dir/src/game.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/game.cpp
+
+CMakeFiles/curses-demo.dir/src/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/curses-demo.dir/src/game.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/game.cpp > CMakeFiles/curses-demo.dir/src/game.cpp.i
+
+CMakeFiles/curses-demo.dir/src/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/curses-demo.dir/src/game.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/game.cpp -o CMakeFiles/curses-demo.dir/src/game.cpp.s
+
+CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o: CMakeFiles/curses-demo.dir/flags.make
+CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o: ../src/tetrimino.cpp
+CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o: CMakeFiles/curses-demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o -MF CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o.d -o CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetrimino.cpp
+
+CMakeFiles/curses-demo.dir/src/tetrimino.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/curses-demo.dir/src/tetrimino.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetrimino.cpp > CMakeFiles/curses-demo.dir/src/tetrimino.cpp.i
+
+CMakeFiles/curses-demo.dir/src/tetrimino.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/curses-demo.dir/src/tetrimino.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetrimino.cpp -o CMakeFiles/curses-demo.dir/src/tetrimino.cpp.s
+
+CMakeFiles/curses-demo.dir/src/L.cpp.o: CMakeFiles/curses-demo.dir/flags.make
+CMakeFiles/curses-demo.dir/src/L.cpp.o: ../src/L.cpp
+CMakeFiles/curses-demo.dir/src/L.cpp.o: CMakeFiles/curses-demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/curses-demo.dir/src/L.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/curses-demo.dir/src/L.cpp.o -MF CMakeFiles/curses-demo.dir/src/L.cpp.o.d -o CMakeFiles/curses-demo.dir/src/L.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/L.cpp
+
+CMakeFiles/curses-demo.dir/src/L.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/curses-demo.dir/src/L.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/L.cpp > CMakeFiles/curses-demo.dir/src/L.cpp.i
+
+CMakeFiles/curses-demo.dir/src/L.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/curses-demo.dir/src/L.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/L.cpp -o CMakeFiles/curses-demo.dir/src/L.cpp.s
+
 # Object files for target curses-demo
 curses__demo_OBJECTS = \
-"CMakeFiles/curses-demo.dir/src/board.cpp.o" \
-"CMakeFiles/curses-demo.dir/src/main.cpp.o"
+"CMakeFiles/curses-demo.dir/src/main.cpp.o" \
+"CMakeFiles/curses-demo.dir/src/game.cpp.o" \
+"CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o" \
+"CMakeFiles/curses-demo.dir/src/L.cpp.o"
 
 # External object files for target curses-demo
 curses__demo_EXTERNAL_OBJECTS =
 
-curses-demo: CMakeFiles/curses-demo.dir/src/board.cpp.o
 curses-demo: CMakeFiles/curses-demo.dir/src/main.cpp.o
+curses-demo: CMakeFiles/curses-demo.dir/src/game.cpp.o
+curses-demo: CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o
+curses-demo: CMakeFiles/curses-demo.dir/src/L.cpp.o
 curses-demo: CMakeFiles/curses-demo.dir/build.make
 curses-demo: /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib/libcurses.tbd
 curses-demo: /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib/libform.tbd
 curses-demo: CMakeFiles/curses-demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable curses-demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable curses-demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/curses-demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

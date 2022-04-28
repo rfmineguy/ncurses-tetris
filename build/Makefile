@@ -129,29 +129,53 @@ curses-demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/build
 .PHONY : curses-demo/fast
 
-src/board.o: src/board.cpp.o
-.PHONY : src/board.o
+src/L.o: src/L.cpp.o
+.PHONY : src/L.o
 
 # target to build an object file
-src/board.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/board.cpp.o
-.PHONY : src/board.cpp.o
+src/L.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/L.cpp.o
+.PHONY : src/L.cpp.o
 
-src/board.i: src/board.cpp.i
-.PHONY : src/board.i
+src/L.i: src/L.cpp.i
+.PHONY : src/L.i
 
 # target to preprocess a source file
-src/board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/board.cpp.i
-.PHONY : src/board.cpp.i
+src/L.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/L.cpp.i
+.PHONY : src/L.cpp.i
 
-src/board.s: src/board.cpp.s
-.PHONY : src/board.s
+src/L.s: src/L.cpp.s
+.PHONY : src/L.s
 
 # target to generate assembly for a file
-src/board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/board.cpp.s
-.PHONY : src/board.cpp.s
+src/L.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/L.cpp.s
+.PHONY : src/L.cpp.s
+
+src/game.o: src/game.cpp.o
+.PHONY : src/game.o
+
+# target to build an object file
+src/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/game.cpp.o
+.PHONY : src/game.cpp.o
+
+src/game.i: src/game.cpp.i
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
+
+src/game.s: src/game.cpp.s
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -177,6 +201,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/tetrimino.o: src/tetrimino.cpp.o
+.PHONY : src/tetrimino.o
+
+# target to build an object file
+src/tetrimino.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o
+.PHONY : src/tetrimino.cpp.o
+
+src/tetrimino.i: src/tetrimino.cpp.i
+.PHONY : src/tetrimino.i
+
+# target to preprocess a source file
+src/tetrimino.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetrimino.cpp.i
+.PHONY : src/tetrimino.cpp.i
+
+src/tetrimino.s: src/tetrimino.cpp.s
+.PHONY : src/tetrimino.s
+
+# target to generate assembly for a file
+src/tetrimino.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetrimino.cpp.s
+.PHONY : src/tetrimino.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... curses-demo"
-	@echo "... src/board.o"
-	@echo "... src/board.i"
-	@echo "... src/board.s"
+	@echo "... src/L.o"
+	@echo "... src/L.i"
+	@echo "... src/L.s"
+	@echo "... src/game.o"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tetrimino.o"
+	@echo "... src/tetrimino.i"
+	@echo "... src/tetrimino.s"
 .PHONY : help
 
 

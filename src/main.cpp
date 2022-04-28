@@ -1,29 +1,38 @@
 #include <iostream>
 #include <ncurses.h>
-#include "board.h"
+#include <curses.h>
+#include "game.h"
 
 //https://www.linuxjournal.com/content/getting-started-ncurses
+//https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/
+//
+
+void setupCurses();
 
 int main() {
-    Board b;
     initscr();
+    setupCurses();
+    int maxx, maxy;
+    Game game;
 
-    addstr("-----------------\n| codedrome.com |\n| ncurses Demo  |\n-----------------\n\n");
-    refresh();
-
-    //printing();
-
-    //moving_and_sleeping();
-
-    //colouring();
-
-    b.Display();
-    addstr("\npress any key to exit...");
-    refresh();
-
-    getch();
+    game.Run();
 
     endwin();
 
     return EXIT_SUCCESS;
+}
+
+void setupCurses() {
+    //raw();
+    //keypad(stdscr, TRUE);       //enables arrow keys, function keys, etc.
+    clear();
+    if (!has_colors()) {
+        printw("Terminal doesn't support color");
+        getch();
+        std::cout << "Colors not supported" << std::endl;
+    }
+    else {
+        printw("Terminal supports color");
+        start_color();
+    }
 }

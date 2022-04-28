@@ -9,8 +9,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
 find_package(Curses REQUIRED)
 set (SOURCES
-    src/board.cpp
     src/main.cpp
+    src/game.cpp
+    src/tetrimino.cpp
+    src/L.cpp
     )
 
 include_directories(curses-demo ${CURSES_INCLUDE_DIRS})
