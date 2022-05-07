@@ -1,12 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/curses-demo.dir/src/L.cpp.o"
-  "CMakeFiles/curses-demo.dir/src/L.cpp.o.d"
   "CMakeFiles/curses-demo.dir/src/game.cpp.o"
   "CMakeFiles/curses-demo.dir/src/game.cpp.o.d"
   "CMakeFiles/curses-demo.dir/src/main.cpp.o"
   "CMakeFiles/curses-demo.dir/src/main.cpp.o.d"
-  "CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o"
-  "CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o.d"
+  "CMakeFiles/curses-demo.dir/src/tetriminos/I.cpp.o"
+  "CMakeFiles/curses-demo.dir/src/tetriminos/I.cpp.o.d"
+  "CMakeFiles/curses-demo.dir/src/tetriminos/L.cpp.o"
+  "CMakeFiles/curses-demo.dir/src/tetriminos/L.cpp.o.d"
+  "CMakeFiles/curses-demo.dir/src/tetriminos/tetrimino.cpp.o"
+  "CMakeFiles/curses-demo.dir/src/tetriminos/tetrimino.cpp.o.d"
   "curses-demo"
   "curses-demo.pdb"
 )

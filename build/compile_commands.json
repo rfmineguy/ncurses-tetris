@@ -11,12 +11,17 @@
 },
 {
   "directory": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/rileyfischer/Documents/dev/school/TetrisNCurses/curses-demo  -std=c++17 -pthread -O2 -g -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/curses-demo.dir/src/tetrimino.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetrimino.cpp",
-  "file": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetrimino.cpp"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/rileyfischer/Documents/dev/school/TetrisNCurses/curses-demo  -std=c++17 -pthread -O2 -g -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/curses-demo.dir/src/tetriminos/tetrimino.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetriminos/tetrimino.cpp",
+  "file": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetriminos/tetrimino.cpp"
 },
 {
   "directory": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/rileyfischer/Documents/dev/school/TetrisNCurses/curses-demo  -std=c++17 -pthread -O2 -g -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/curses-demo.dir/src/L.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/L.cpp",
-  "file": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/L.cpp"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/rileyfischer/Documents/dev/school/TetrisNCurses/curses-demo  -std=c++17 -pthread -O2 -g -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/curses-demo.dir/src/tetriminos/L.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetriminos/L.cpp",
+  "file": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetriminos/L.cpp"
+},
+{
+  "directory": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/rileyfischer/Documents/dev/school/TetrisNCurses/curses-demo  -std=c++17 -pthread -O2 -g -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/curses-demo.dir/src/tetriminos/I.cpp.o -c /Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetriminos/I.cpp",
+  "file": "/Users/rileyfischer/Documents/dev/school/TetrisNCurses/src/tetriminos/I.cpp"
 }
 ]

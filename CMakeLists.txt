@@ -11,8 +11,9 @@ find_package(Curses REQUIRED)
 set (SOURCES
     src/main.cpp
     src/game.cpp
-    src/tetrimino.cpp
-    src/L.cpp
+    src/tetriminos/tetrimino.cpp
+    src/tetriminos/L.cpp
+    src/tetriminos/I.cpp
     )
 
 include_directories(curses-demo ${CURSES_INCLUDE_DIRS})

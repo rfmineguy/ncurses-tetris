@@ -1,8 +1,8 @@
 //https://en.wikipedia.org/wiki/Tetromino
 
 #pragma once
-#pragma once
 #include <array>
+#include "../constants.h"
 class Tetrimino {
     public:
         Tetrimino();
@@ -25,10 +25,32 @@ class Tetrimino {
         char GetChar(int x, int y) const;
 
         /* GetChar(int)
+         *   Description : N/A
          *   Param 'index' : the index to querry for a char
          *   Return : the char at the given index in 'pieceShapeArr'
          */
         char GetChar(int index) const;
+      
+        /* DeltaPos(int, int)
+         *   Description : handles moving this piece
+         *   Throws : OutOfBoard exception
+         *   Param 'dx': the deltax to move
+         *   Param 'dy': the deltay to move
+         *   Return : whether the move was successful or not
+         */
+        void DeltaPos(int dx, int dy);
+
+        // Getters
+        int GetX() const;
+        int& GetX();
+        
+        // Setters
+        int GetY() const;
+        int& GetY();
+
+        // WIDTH_IN_PIECES comes from constants.h
+        // board should be the dynamicBoard from game.h
+        void Draw(char board[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]);
 
     protected:
         //this (x,y) represents the top-left corner of the 4x4 pieceShape in the main board
