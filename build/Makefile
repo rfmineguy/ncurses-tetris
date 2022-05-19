@@ -177,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/menu.o: src/menu.cpp.o
+.PHONY : src/menu.o
+
+# target to build an object file
+src/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
+
+src/menu.i: src/menu.cpp.i
+.PHONY : src/menu.i
+
+# target to preprocess a source file
+src/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
+
+src/menu.s: src/menu.cpp.s
+.PHONY : src/menu.s
+
+# target to generate assembly for a file
+src/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
+
 src/tetriminos/I.o: src/tetriminos/I.cpp.o
 .PHONY : src/tetriminos/I.o
 
@@ -225,6 +249,54 @@ src/tetriminos/L.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/L.cpp.s
 .PHONY : src/tetriminos/L.cpp.s
 
+src/tetriminos/T.o: src/tetriminos/T.cpp.o
+.PHONY : src/tetriminos/T.o
+
+# target to build an object file
+src/tetriminos/T.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/T.cpp.o
+.PHONY : src/tetriminos/T.cpp.o
+
+src/tetriminos/T.i: src/tetriminos/T.cpp.i
+.PHONY : src/tetriminos/T.i
+
+# target to preprocess a source file
+src/tetriminos/T.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/T.cpp.i
+.PHONY : src/tetriminos/T.cpp.i
+
+src/tetriminos/T.s: src/tetriminos/T.cpp.s
+.PHONY : src/tetriminos/T.s
+
+# target to generate assembly for a file
+src/tetriminos/T.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/T.cpp.s
+.PHONY : src/tetriminos/T.cpp.s
+
+src/tetriminos/square.o: src/tetriminos/square.cpp.o
+.PHONY : src/tetriminos/square.o
+
+# target to build an object file
+src/tetriminos/square.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/square.cpp.o
+.PHONY : src/tetriminos/square.cpp.o
+
+src/tetriminos/square.i: src/tetriminos/square.cpp.i
+.PHONY : src/tetriminos/square.i
+
+# target to preprocess a source file
+src/tetriminos/square.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/square.cpp.i
+.PHONY : src/tetriminos/square.cpp.i
+
+src/tetriminos/square.s: src/tetriminos/square.cpp.s
+.PHONY : src/tetriminos/square.s
+
+# target to generate assembly for a file
+src/tetriminos/square.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/curses-demo.dir/build.make CMakeFiles/curses-demo.dir/src/tetriminos/square.cpp.s
+.PHONY : src/tetriminos/square.cpp.s
+
 src/tetriminos/tetrimino.o: src/tetriminos/tetrimino.cpp.o
 .PHONY : src/tetriminos/tetrimino.o
 
@@ -264,12 +336,21 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
 	@echo "... src/tetriminos/I.o"
 	@echo "... src/tetriminos/I.i"
 	@echo "... src/tetriminos/I.s"
 	@echo "... src/tetriminos/L.o"
 	@echo "... src/tetriminos/L.i"
 	@echo "... src/tetriminos/L.s"
+	@echo "... src/tetriminos/T.o"
+	@echo "... src/tetriminos/T.i"
+	@echo "... src/tetriminos/T.s"
+	@echo "... src/tetriminos/square.o"
+	@echo "... src/tetriminos/square.i"
+	@echo "... src/tetriminos/square.s"
 	@echo "... src/tetriminos/tetrimino.o"
 	@echo "... src/tetriminos/tetrimino.i"
 	@echo "... src/tetriminos/tetrimino.s"
