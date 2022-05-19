@@ -4,14 +4,16 @@ Final project for CS2 class
 
 # Build instructions
 ## Windows
-not supported
+* not supported
 
 ## Linux
-sudo apt-get install libncurses5-dev libncursesw5-dev
-
-sh build.sh
+1. sudo apt-get install libncurses5-dev libncursesw5-dev
+2. sh build.sh
 
 ## MacOS
-brew install ncurses
+1. brew install ncurses
+2. sh build.sh
 
-sh build.sh
+
+# Info
+* *project_info.sh* runs a script that analyzes the code files of the project and outputs line counts of various types
