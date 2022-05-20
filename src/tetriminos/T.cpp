@@ -8,25 +8,55 @@ T::T(int x)
 
 T::T(int x, int y)
 :Tetromino(x, y) {
-    pieceShapeArr = {
-    '#', '#', '#', ' ',
-    ' ', '#', ' ', ' ',
-    ' ', ' ', ' ', ' ',
-    ' ', ' ', ' ', ' ',
-    };
-    pieceWidth = 3;
-    pieceHeight = 2;
-    rotation = 0;
+    TurnPiece(0);
 }
 
 T::~T() {}
 
 void T::TurnPiece(int direction) {
-    switch (direction % 4) {
-    case 0: break;
-    case 1: break;
-    case 2: break;
-    case 3: break;
+    orientation += direction;
+    orientation %= 4;
+    switch (orientation) {
+    case 0: 
+        pieceShapeArr = {
+        '#', '#', '#', ' ',
+        ' ', '#', ' ', ' ',
+        ' ', ' ', ' ', ' ',
+        ' ', ' ', ' ', ' '
+        };
+        pieceWidth = 3;
+        pieceHeight = 2;
+        break;
+    case 1: 
+        pieceShapeArr = {
+        ' ', '#', ' ', ' ',
+        '#', '#', ' ', ' ',
+        ' ', '#', ' ', ' ',
+        ' ', ' ', ' ', ' '
+        };
+        pieceWidth = 2;
+        pieceHeight = 3;
+        break;
+    case 2: 
+        pieceShapeArr = {
+        ' ', '#', ' ', ' ',
+        '#', '#', '#', ' ',
+        ' ', ' ', ' ', ' ',
+        ' ', ' ', ' ', ' '
+        };
+        pieceWidth = 3;
+        pieceHeight = 2;
+        break;
+    case 3: 
+        pieceShapeArr = {
+        '#', ' ', ' ', ' ',
+        '#', '#', ' ', ' ',
+        '#', ' ', ' ', ' ',
+        ' ', ' ', ' ', ' '
+        };
+        pieceWidth = 2;
+        pieceHeight = 3;
+        break;
     }
 }
 

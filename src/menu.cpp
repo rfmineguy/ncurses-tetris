@@ -82,7 +82,8 @@ int Menu::Run() {
                 break;
             }
         } catch(std::string& e) {
-            mvwprintw(stdscr, 7, 10, e.c_str());
+            char msg[255] = "Exception : ";
+            mvwprintw(stdscr, 7, 10, strcat(msg, e.c_str()));
         }
         
 

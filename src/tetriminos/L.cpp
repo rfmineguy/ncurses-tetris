@@ -20,10 +20,11 @@ L::L(int x, int y)
 L::~L() {}
 
 void L::TurnPiece(int direction) {
+    orientation += direction;
     switch (direction % 4) {
     case 0: {
             pieceShapeArr = {
-
+                
             };
             break;
         }
@@ -34,13 +35,15 @@ void L::TurnPiece(int direction) {
 }
 
 bool L::WillTouchStaticPiece(int dx, int dy, char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
-    if (staticBoard[pieceX][pieceY + pieceHeight + dy - 1] != ' ') {
+    int x = GetX();
+    int y = GetY();
+    if (staticBoard[x][y + pieceHeight + dy - 1] != ' ') {
         return true;
     }
-    if (staticBoard[pieceX + 1 + dx][pieceY + pieceHeight + dy - 1] != ' ')
+    if (staticBoard[x + 1 + dx][y + pieceHeight + dy - 1] != ' ')
         return true;
     for (int i = 0; i < pieceHeight; i++) {
-        if (staticBoard[pieceX + dx][pieceY + i] != ' ')
+        if (staticBoard[x + dx][y + i] != ' ')
             return true;
     }
     return false;

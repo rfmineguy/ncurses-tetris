@@ -12,7 +12,13 @@ class Position {
         bool operator>=(const Position& p);
         bool operator<(const Position& p);
         bool operator<=(const Position& p);
-        
+        Position& operator+=(const Position& p);
+
+        void SetX(T);
+        T GetX() const;
+        void SetY(T);
+        T GetY() const;
+
     private:
         T *x, *y;
 };
@@ -83,4 +89,30 @@ bool Position<T>::operator>(const Position<T>& p) {
 template <typename T>
 bool Position<T>::operator>=(const Position<T>& p) {
     return operator>(p) || operator==(p);
+}
+
+template <typename T>
+Position<T>& Position<T>::operator+=(const Position<T>& p) {
+    *this->x += *p.x;
+    *this->y += *p.y;
+    return *this;
+}
+
+template <typename T>
+void Position<T>::SetX(T v) {
+    x = v;
+}
+template <typename T>
+T Position<T>::GetX() const {
+    return *x;
+}
+
+template <typename T>
+void Position<T>::SetY(T v) {
+    y = v;
+}
+
+template <typename T>
+T Position<T>::GetY() const {
+    return *y;
 }

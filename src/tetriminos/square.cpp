@@ -26,16 +26,18 @@ void Square::TurnPiece(int direction) {
 }
 
 bool Square::WillTouchStaticPiece(int dx, int dy, char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
-    if (staticBoard[pieceX][pieceY + 1 + dy] != ' ')
+    int x = GetX();
+    int y = GetY();
+    if (staticBoard[x][y + 1 + dy] != ' ')
         return true;
-    if (staticBoard[pieceX + 1][pieceY + 1 + dy] != ' ')
+    if (staticBoard[x + 1][y + 1 + dy] != ' ')
         return true;
     //move left into the right of another block
-    if (dx < 0 && staticBoard[pieceX + pieceWidth + dx][pieceY] != ' ' && staticBoard[pieceX + pieceWidth + dx][pieceY + 1] != ' ')
+    if (dx < 0 && staticBoard[x + pieceWidth + dx][y] != ' ' && staticBoard[x + pieceWidth + dx][y + 1] != ' ')
         return true;
 
     //move right into the left of another block
-    if (dx > 0 && staticBoard[pieceX + 1 + dx][pieceY] != ' ' && staticBoard[pieceX + 1 + dx][pieceY] != ' ')
+    if (dx > 0 && staticBoard[x + 1 + dx][y] != ' ' && staticBoard[x + 1 + dx][y] != ' ')
         return true;
     return false;
 }

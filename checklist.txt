@@ -20,7 +20,7 @@ static members in a class                           [x]     NOTE: tetrimino:cpp:
 A friend function/method                            [x]     NOTE: do some testing of this one
 Classes with a copy constructor                     [x]     NOTE: tetrimino.cpp:16
 Classes with at least 5 operator overloads          [x]     NOTE: position.hpp  (NOT USED YET)
-Object aggregation                                  [x]     NOTE: game.h:74 and game.h:75
+Object aggregation                                  [x]     NOTE: game.h:74 and game.h:675
 
 Chapter 15
 Class inheritance                                   [x]
@@ -32,7 +32,7 @@ Abstract classes (interfaces)                       [x]
 Chapter 16
 Exception signaling with throw                      [x]     NOTE: menu.cpp:65 and menu.cpp:75
 Exception handling with try/catch                   [x]     NOTE: menu.cpp:56 and menu.cpp:84
-Generic programming using templates                 [ ]
+Generic programming using templates                 [x]     NOTE: position.hpp
 
 Chapter 17
 Use of an STL container (array, vector, a map variant, or a set variant)    [x] (array in tetrimino.h)
@@ -40,3 +40,5 @@ Use of iterators on your chosen STL container                               [x]
 
 Chapter 20
 At least one recursive function                                             [ ]
+
+Essay Status                                        [INCOMPLETE]

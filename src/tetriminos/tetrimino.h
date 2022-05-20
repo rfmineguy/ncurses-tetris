@@ -3,6 +3,7 @@
 #pragma once
 #include <array>
 #include "../constants.h"
+#include "../position.hpp"
 
 class Tetromino {
     public:
@@ -58,11 +59,8 @@ class Tetromino {
 
         // Getters
         int GetX() const;
-        int& GetX();
-        
-        // Setters
         int GetY() const;
-        int& GetY();
+
         static void SetTotalTetrominosSpawned(int);
 
         // WIDTH_IN_PIECES comes from constants.h
@@ -76,9 +74,9 @@ class Tetromino {
 
     protected:
         //this (x,y) represents the top-left corner of the 4x4 pieceShape in the main board
-        int pieceX, pieceY;
+        Position<int> pos;
+        int orientation;
         int pieceWidth, pieceHeight;
-        int rotation;                   //0, 1, 2, 3
 
         //get char at x,y with (x * 4 + y)
         std::array<char, 16> pieceShapeArr;

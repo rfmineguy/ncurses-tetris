@@ -35,10 +35,12 @@ void I::TurnPiece(int direction) {
 }
 
 bool I::WillTouchStaticPiece(int dx, int dy, char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
-    if (staticBoard[pieceX][pieceY + pieceHeight + dy - 1] != ' ')
+    int x = GetX();
+    int y = GetY();
+    if (staticBoard[x][y + pieceHeight + dy - 1] != ' ')
         return true;
     for (int i = 0; i < pieceHeight; i++) {
-        if (staticBoard[pieceX + dx][pieceY + i] != ' ')
+        if (staticBoard[x + dx][y + i] != ' ')
             return true;
     }
     return false;

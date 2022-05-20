@@ -62,7 +62,7 @@ class Game {
     private:
         bool running;
         int timer;
-        const int FALL_SPEED;
+        const int FALL_SPEED, SPEED_INCREASE_INTERVAL;
         float fallSpeedMultiplier; //number less than 1 to increase the fall interval
 
         WINDOW* tetrisWindow;

@@ -1,5 +1,4 @@
 #include "tetrimino.h"
-#include "../exceptions.h"
 #include "curses.h"
 
 int Tetromino::totalTetrominosSpawned = 0;
@@ -11,12 +10,12 @@ Tetromino::Tetromino(int _pieceX)
     :Tetromino(_pieceX, 0) {}
 
 Tetromino::Tetromino(int _pieceX, int _pieceY) 
-:pieceX(_pieceX), pieceY(_pieceY), pieceWidth(4), pieceHeight(4) {
+:pos(_pieceX, _pieceY), pieceWidth(4), pieceHeight(4), orientation(0) {
     Tetromino::totalTetrominosSpawned++;
 }
 
 Tetromino::Tetromino(const Tetromino& t) 
-:pieceX(t.pieceX), pieceY(t.pieceY), pieceWidth(t.pieceWidth), pieceHeight(t.pieceHeight), rotation(t.rotation) {
+:pos(t.pos), pieceWidth(t.pieceWidth), pieceHeight(t.pieceHeight), orientation(t.orientation) {
     for (int i = 0; i < pieceWidth * pieceHeight; i++) {
         pieceShapeArr[i] = t.pieceShapeArr[i];
     }
@@ -42,37 +41,33 @@ char Tetromino::GetChar(int index) const {
 bool Tetromino::DeltaPos(int dx, int dy, char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
     bool touchingBoundary = WillTouchBoundary(dx, dy);
     bool touchingOtherPiece = WillTouchStaticPiece(dx, dy, staticBoard); //pure virtual function implemented in child classes
-   
+    
     if (touchingBoundary || touchingOtherPiece) {
         return true;
     }
     else {
-        pieceX += dx;
-        pieceY += dy;
+        pos += Position{dx, dy};//.SetX() += dx;
+        //pieceY += dy;
         return false;
     }
 }
 
 bool Tetromino::WillTouchBoundary(int dx, int dy) {
-    bool touchingLeftEdge = pieceX + dx <= 0;
-    bool touchingTopEdge = pieceY + pieceHeight + dy < 0;
-    bool touchingRightEdge = pieceX + pieceWidth + dx > WIDTH_IN_PIECES - 1;
-    bool touchingBottomEdge = pieceY + pieceHeight + dy > HEIGHT_IN_PIECES - 1;
+    bool touchingLeftEdge = GetX() + dx <= 0;
+    bool touchingTopEdge = GetY() + pieceHeight + dy < 0;
+    bool touchingRightEdge = GetX() + pieceWidth + dx > WIDTH_IN_PIECES - 1;
+    bool touchingBottomEdge = GetY() + pieceHeight + dy > HEIGHT_IN_PIECES - 1;
 
     bool touchingEdge = touchingLeftEdge || touchingRightEdge || touchingTopEdge || touchingBottomEdge;
     return touchingEdge;
 }
 
 int Tetromino::GetX() const {
-    return pieceX;
+    return pos.GetX();
 }
 
-int& Tetromino::GetX() {
-    return pieceX;
-}
-
-int& Tetromino::GetY() {
-    return pieceY;
+int Tetromino::GetY() const {
+    return pos.GetY();
 }
 
 void Tetromino::Draw(char board[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
@@ -81,7 +76,7 @@ void Tetromino::Draw(char board[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
         for (int j = 0; j < 4; j++) {
             char c = GetChar(j,i);
             if (c != ' ') {
-                board[pieceX + i][pieceY + j] = c;
+                board[pos.GetX() + i][pos.GetY() + j] = c;
             }
         }
     }

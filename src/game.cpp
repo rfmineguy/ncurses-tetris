@@ -14,6 +14,7 @@ Game::Game()
     running(true), 
     timer(0), 
     FALL_SPEED(30),
+    SPEED_INCREASE_INTERVAL(600),   //Every 600/60 seconds = 10 seconds
     fallSpeedMultiplier(0.1f){
 
     getmaxyx(stdscr, maxy, maxx);
@@ -87,8 +88,10 @@ void Game::HandleInput() {
         //    fallSpeedMultiplier-=0.1;
         //}
     }
+    if (timer % SPEED_INCREASE_INTERVAL == 0)
+        fallSpeedMultiplier+=0.1;
     if (timer % (int)(FALL_SPEED * (1 - fallSpeedMultiplier)) == 0) {
-        timer = 0;
+        //timer = 0;
         if (currentTetrimino->DeltaPos(0, 1, staticBoard)) {
             mvwprintw(stdscr, 0, 0, "At the bottom");
             wrefresh(tetrisWindow);
@@ -137,7 +140,39 @@ void Game::DrawNextPieceWindow() {
 }
 
 void Game::CheckRowComplete() {
+    /*  1. Loop over all the rows from the bottom up
+     *  2. Check to see if that row is full
+     *  3. If it is clear it and shift everything above it down
+     *
+     *  Pseudo Code :
+     *  for i from 0 to height:
+     *      //check the i-th row
+     *      int countFullSpots
+     *      for j from 0 to width:
+     *          if '#': countFullSpots++
+     *      if countFullSpot == width
+     *          //clear and shift
+     */
 
+    //loop over rows
+    for (int j = 0; j < HEIGHT_IN_PIECES; j++) {
+        int countFull = 0;
+        for  (int i = 0; i < WIDTH_IN_PIECES; i++) {
+            //count the row
+            if (staticBoard[i][j] == '#')
+                countFull++;
+        }
+        //check the row's count
+        if (countFull == WIDTH_IN_PIECES) {
+            //shift the rows above row 'j' down
+            for (int z = j; z < WIDTH_IN_PIECES; z++) {
+                staticBoard[j][z] = staticBoard[j - 1][z];
+            }
+            for (int i = 0; i < WIDTH_IN_PIECES; i++) {
+                staticBoard[i][HEIGHT_IN_PIECES - 1] = ' ';
+            }
+        }
+    }
 }
 
 void Game::DrawDynamicBuffer() {
