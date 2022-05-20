@@ -3,7 +3,7 @@ Final project for CS2 class
 
 
 # Build instructions
-git clone https://github.com/rfmineguy/ncurses-tetris
+* git clone https://github.com/rfmineguy/ncurses-tetris
 
 ## Windows
 * not supported
