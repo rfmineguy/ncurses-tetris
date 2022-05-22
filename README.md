@@ -8,9 +8,15 @@ Final project for CS2 class
 ## Windows
 * not supported
 
-## Linux
+## Linux (ubuntu)
 1. sudo apt-get install libncurses5-dev libncursesw5-dev
 2. sh build.sh
+
+## Linux (fedora)
+1. sudo dnf install ncurses-devel
+
+## Linux (arch)
+1. sudo pacman -S ncurses-dev
 
 ## MacOS
 1. brew install ncurses
