@@ -208,9 +208,9 @@ void Game::CheckRowComplete() {
 
             for (int j2 = j; j2 < HEIGHT_IN_PIECES - 1; j2++) {
                 //swap row above with this row
-                char* temp = staticBoard[j2];
-                std::memcpy(staticBoard[j2], staticBoard[j2 + 1], WIDTH_IN_PIECES);
-                std::memcpy(staticBoard[j2+1], temp, WIDTH_IN_PIECES);
+                //char* temp = staticBoard[j2];
+                //std::memcpy(staticBoard[j2], staticBoard[j2 + 1], WIDTH_IN_PIECES);
+                //std::memcpy(staticBoard[j2+1], temp, WIDTH_IN_PIECES);
 
                 for (int i = 0; i < WIDTH_IN_PIECES; i++) {
                     staticBoard[i][j2] = staticBoard[i][j2 + 1];
