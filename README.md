@@ -9,6 +9,7 @@ Final project for CS2 class
 * not supported
 * NCurses is simply not available / doesn't run in the Windows system.
   - I think you *could* use WSL (Windows Subsystem for Linux), but I haven't tested this.
+  - If it does the instructions are for
 
 ## Linux (ubuntu)
 1. sudo apt-get install libncurses5-dev libncursesw5-dev
@@ -16,9 +17,11 @@ Final project for CS2 class
 
 ## Linux (fedora)
 1. sudo dnf install ncurses-devel
+2. sh build.sh
 
 ## Linux (arch)
 1. sudo pacman -S ncurses-dev
+2. sh build.sh
 
 ## MacOS
 1. brew install ncurses
@@ -27,3 +30,4 @@ Final project for CS2 class
 
 # Info
 * *project_info.sh* runs a script that analyzes the code files of the project and outputs line counts of various types
+  - use `sh build.sh`
