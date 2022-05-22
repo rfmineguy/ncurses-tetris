@@ -12,19 +12,19 @@ Final project for CS2 class
   - If it does the instructions are for
 
 ## Linux (ubuntu)
-1. sudo apt-get install libncurses5-dev libncursesw5-dev
+1. `sudo apt-get install libncurses5-dev libncursesw5-dev`
 2. `sh build.sh`
 
 ## Linux (fedora)
-1. sudo dnf install ncurses-devel
+1. `sudo dnf install ncurses-devel`
 2. `sh build.sh`
 
 ## Linux (arch)
-1. sudo pacman -S ncurses-dev
+1. `sudo pacman -S ncurses-dev`
 2. `sh build.sh`
 
 ## MacOS
-1. brew install ncurses
+1. `brew install ncurses`
 2. `sh build.sh`
 
 
