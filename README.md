@@ -8,7 +8,7 @@ Final project for CS2 class
 ## Windows
 * not supported
 * NCurses is simply not available / doesn't run in the Windows system.
-*   I think you *could* use WSL (Windows Subsystem for Linux), but I haven't tested this.
+  - I think you *could* use WSL (Windows Subsystem for Linux), but I haven't tested this.
 
 ## Linux (ubuntu)
 1. sudo apt-get install libncurses5-dev libncursesw5-dev
