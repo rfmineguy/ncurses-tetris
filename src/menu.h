@@ -3,6 +3,7 @@
 #include <curses.h>
 #include <array>
 #include <string>
+#include <cstring>
 
 class Menu {
     public:

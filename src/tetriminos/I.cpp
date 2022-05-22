@@ -27,9 +27,32 @@ I::~I() {}
 //
 //# # # # -3
 void I::TurnPiece(int direction) {
-    switch (direction) {
-    case 0: break;
-    case 1: break;
+    orientation += direction;
+    orientation %= 2;
+    switch (orientation) {
+    case 0: {
+            pieceShapeArr = {
+                '#', ' ', ' ', ' ',
+                '#', ' ', ' ', ' ',
+                '#', ' ', ' ', ' ',
+                '#', ' ', ' ', ' ',
+            };
+            pieceWidth = 1;
+            pieceHeight = 4;
+            break;
+        }
+    case 1: {
+            pieceShapeArr = {
+                '#', '#', '#', '#',
+                ' ', ' ', ' ', ' ',
+                ' ', ' ', ' ', ' ',
+                ' ', ' ', ' ', ' ',
+            };
+            pieceWidth = 4;
+            pieceHeight = 1;
+            break;
+        }
+break;
     default: break;
     }
 }
@@ -37,11 +60,24 @@ void I::TurnPiece(int direction) {
 bool I::WillTouchStaticPiece(int dx, int dy, char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) {
     int x = GetX();
     int y = GetY();
-    if (staticBoard[x][y + pieceHeight + dy - 1] != ' ')
-        return true;
-    for (int i = 0; i < pieceHeight; i++) {
-        if (staticBoard[x + dx][y + i] != ' ')
-            return true;
+
+    //collision based on orientation
+    switch (orientation) {
+        case 0: {
+                    for (int j = 0; j < pieceHeight; j++) {
+                        if (staticBoard[x + dx][y + j] != ' ')
+                            return true;
+                    }
+                    if (staticBoard[x + dx][y + pieceHeight + dy - 1] != ' ')
+                        return true;
+                    break;
+                }
+        case 1: {
+                    for (int j = 0; j < pieceWidth; j++) {
+                        if (staticBoard[x + j + dx][y + dy] != ' ')
+                            return true;
+                    }
+                }
     }
     return false;
 }

@@ -36,12 +36,20 @@ class Game {
          */
         void DrawNextPieceWindow();
       
-        /* DrawDebugWindow()
+        /* DrawControlsWindow()
          *   Description : some logic to draw extra info that's nice to see
          *   Params : N/A
          *   Return : N/A
          */
-        void DrawDebugWindow();
+        void DrawControlsWindow();
+
+        /* DrawPieceCountingWindow()
+         *   Description : some logic to draw how many of each piece has been spawned so far
+         *              TODO sort the result based on how many have been spawned
+         *   Params : N/A
+         *   Return : N/A
+         */
+        void DrawPieceCountingWindow();
 
         /* CheckRowComplete() TODO
          *   Description : checks if any of the rows in the board are completely full
@@ -51,14 +59,34 @@ class Game {
          */
         void CheckRowComplete();
 
+        /* IsRowFull(int)
+         *   Description : checks to see if all of the elements in a row have something in them
+         *   Param 'row' : which row are we checking?
+         *   Return : whether the row is full or not (true if yes, false if no)
+         */
+        bool IsRowFull(int row);
+
+        /* Draw____Buffer() 
+         *   Description : draws the appropriate buffer contents to the appropriate ncurses window
+         *   Params : N/A
+         *   Return : N/A
+         */
         void DrawStaticBuffer();
         void DrawDynamicBuffer();
 
+        /* SpawnNewTetrimino()
+         *   Description : 
+         *   Params : N/A
+         *   Return : N/A
+         */
         void SpawnNewTetrimino();
 
         void BakeToStatic();
         void ClearDynBuff();
-    
+
+    private:
+        int GetPieceCountIndex(const std::string& name);
+
     private:
         bool running;
         int timer;
@@ -67,10 +95,16 @@ class Game {
 
         WINDOW* tetrisWindow;
         WINDOW* nextPieceWindow;
+        WINDOW* controlsWindow;
+        WINDOW* pieceCountingWindow;
 
         char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES];
         char dynamicBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES];
+        //0:L, 1:I, 2:T, 3:Square
+        std::array<std::string, 4> piecesSpawnedNames;
+        std::array<int, 4> piecesSpawnedCounts;       //[0]:I, [1]:T, [2]:Square, [3]:L
 
+        std::array<std::pair<std::string, int>, 4> spawnedPieces;   //i want my own sorting on this. (no map)
         Tetromino* currentTetrimino;
         Tetromino* nextTetrimino;
         int maxx, maxy;

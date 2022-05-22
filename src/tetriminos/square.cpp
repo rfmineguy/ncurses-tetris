@@ -33,11 +33,14 @@ bool Square::WillTouchStaticPiece(int dx, int dy, char staticBoard[WIDTH_IN_PIEC
     if (staticBoard[x + 1][y + 1 + dy] != ' ')
         return true;
     //move left into the right of another block
-    if (dx < 0 && staticBoard[x + pieceWidth + dx][y] != ' ' && staticBoard[x + pieceWidth + dx][y + 1] != ' ')
-        return true;
-
+    if (dx < 0) {
+        for (int j = 0; j < pieceHeight; j++) {
+            if (staticBoard[x + dx][y + j] != ' ')
+                return true;
+        }
+    }     
     //move right into the left of another block
-    if (dx > 0 && staticBoard[x + 1 + dx][y] != ' ' && staticBoard[x + 1 + dx][y] != ' ')
+    if (dx > 0 && staticBoard[x + pieceWidth + dx][y] != ' ')
         return true;
     return false;
 }

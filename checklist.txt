@@ -1,6 +1,6 @@
 Chapter 8
 Implementation and use of linear search or binary search    [ ]
-Implementation and use of bubble sort or selection sort     [ ]
+Implementation and use of bubble sort or selection sort     [x] NOTE: Display how many of each piece has fallen
 
 Chapter 9
 Pointer variables                                   [x]     
@@ -36,9 +36,18 @@ Generic programming using templates                 [x]     NOTE: position.hpp
 
 Chapter 17
 Use of an STL container (array, vector, a map variant, or a set variant)    [x] (array in tetrimino.h)
-Use of iterators on your chosen STL container                               [x]
+Use of\iterators on your chosen STL container                               [x]
 
 Chapter 20
 At least one recursive function                                             [ ]
 
 Essay Status                                        [INCOMPLETE]
+
+
+Personal Checklist
+Collision revamp:
+    I.cpp                                [x]
+    T.cpp                                [ ]
+    Square.cpp                           [x]
+    L.cpp                                [x]
+
