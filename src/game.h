@@ -66,6 +66,8 @@ class Game {
          */
         bool IsRowFull(int row);
 
+        void SwapRows(char* row1, char* row2, int size);
+
         /* Draw____Buffer() 
          *   Description : draws the appropriate buffer contents to the appropriate ncurses window
          *   Params : N/A
@@ -89,6 +91,7 @@ class Game {
 
     private:
         bool running;
+        bool paused;
         int timer;
         const int FALL_SPEED, SPEED_INCREASE_INTERVAL;
         float fallSpeedMultiplier; //number less than 1 to increase the fall interval

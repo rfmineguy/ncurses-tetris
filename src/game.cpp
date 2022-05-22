@@ -75,35 +75,42 @@ void Game::Run() {
 void Game::HandleInput() {
     if (nodelay(stdscr, 1) != ERR) {            //if a key was pressed
         int c = getch();                        //get the key the user pressed
+        if (!paused) {
+            if (c == 'a') {
+                currentTetrimino->DeltaPos(-1, 0, staticBoard);
+            }
+            else if (c == 'd') {
+                currentTetrimino->DeltaPos(1, 0, staticBoard);
+            }
+            else if (c == 's') {
+                currentTetrimino->DeltaPos(0, 1, staticBoard);
+            }
+            else if (c == 'r') {
+                currentTetrimino->TurnPiece(1);     //TODO make this actually work
+            }
+        }
         if (c == 'q') {
             running = false;
         }
-        else if (c == 'a') {
-            currentTetrimino->DeltaPos(-1, 0, staticBoard);
-        }
-        else if (c == 'd') {
-            currentTetrimino->DeltaPos(1, 0, staticBoard);
-        }
-        else if (c == 's') {
-            currentTetrimino->DeltaPos(0, 1, staticBoard);
-        }
-        else if (c == 'r') {
-            currentTetrimino->TurnPiece(1);     //TODO make this actually work
+        if (c == 'p') {
+            paused = !paused;
         }
     }
-    if (timer % SPEED_INCREASE_INTERVAL == 0)
-        fallSpeedMultiplier+=0.1;
-    if (timer % (int)(FALL_SPEED * (1 - fallSpeedMultiplier)) == 0) {
-        //timer = 0;
-        if (currentTetrimino->DeltaPos(0, 1, staticBoard)) {
-            mvwprintw(stdscr, 0, 0, "At the bottom");
-            wrefresh(tetrisWindow);
-            BakeToStatic();
-            SpawnNewTetrimino();
-            CheckRowComplete();
+    if (!paused) {
+        //if (timer % SPEED_INCREASE_INTERVAL == 0)
+        //    fallSpeedMultiplier+=0.1;
+        if (timer % (int)(FALL_SPEED * (1 - fallSpeedMultiplier)) == 0) {
+            //timer = 0;
+            if (currentTetrimino->DeltaPos(0, 1, staticBoard)) {
+                mvwprintw(stdscr, 0, 0, "At the bottom");
+                wrefresh(tetrisWindow);
+                BakeToStatic();
+                SpawnNewTetrimino();
+                CheckRowComplete();
+            }
         }
+        timer+=1;
     }
-    timer+=1;
     usleep(1000000/60.f);       //sleep 1/60 second
 }
 
@@ -111,7 +118,7 @@ void Game::Display() {
     //Main Tetris Window
     clearok(tetrisWindow, true);
     DrawMainTetrisWindow();
-    DrawNextPieceWindow();
+    //DrawNextPieceWindow();
     DrawControlsWindow();
     DrawPieceCountingWindow();
     refresh();
@@ -122,7 +129,10 @@ void Game::DrawMainTetrisWindow() {
     attron(COLOR_PAIR(1));
     box(tetrisWindow, 0, 0);
 
-    mvwprintw(tetrisWindow, 0, (width/2)-(5/2), "TETRIS");
+    if (!paused)
+        mvwprintw(tetrisWindow, 0, (width/2)-(5/2), "TETRIS");
+    else
+        mvwprintw(tetrisWindow, 0, (width/2)-(5/2), "TETRIS (PAUSED)");
 
     ClearDynBuff();
     currentTetrimino->Draw(dynamicBoard);
@@ -149,6 +159,8 @@ void Game::DrawControlsWindow() {
     mvwprintw(controlsWindow, 1, 1, "A/D -> Move left/right");
     mvwprintw(controlsWindow, 2, 1, "S -> Accelerate Fall");
     mvwprintw(controlsWindow, 3, 1, "R -> Rotate Piece");
+    mvwprintw(controlsWindow, 4, 1, "P -> Pause");
+    mvwprintw(controlsWindow, 5, 1, "Q -> Quit");
     wrefresh(controlsWindow);
 }
 
@@ -198,41 +210,18 @@ void Game::CheckRowComplete() {
      */
 
     //loop over rows
-    for (int j = 0; j < HEIGHT_IN_PIECES- 1; j++) {
+    for (int j = 0; j < HEIGHT_IN_PIECES; j++) {
         bool full = IsRowFull(j);
-        mvwprintw(stdscr, 1 + j, 40, "%s", full ? "True" : "False");
+        mvwprintw(stdscr, 1 + j, 40, "j = %d, %s", j, full ? "True" : "False");
         if (full) {
-            for (int i = 0; i < WIDTH_IN_PIECES; i++) {
-                staticBoard[i][j] = ' ';
+            for (int j2 = HEIGHT_IN_PIECES; j2 >= 0; j2--) {
+                for (int i = 0; i < WIDTH_IN_PIECES; i++)
+                    staticBoard[i][j2] = staticBoard[i][j2 - 1];
             }
+            for(int i = 0; i < WIDTH_IN_PIECES; i++)
+                staticBoard[i][HEIGHT_IN_PIECES-1] = ' ';
 
-            for (int j2 = j; j2 < HEIGHT_IN_PIECES - 1; j2++) {
-                //swap row above with this row
-                //char* temp = staticBoard[j2];
-                //std::memcpy(staticBoard[j2], staticBoard[j2 + 1], WIDTH_IN_PIECES);
-                //std::memcpy(staticBoard[j2+1], temp, WIDTH_IN_PIECES);
-
-                for (int i = 0; i < WIDTH_IN_PIECES; i++) {
-                    staticBoard[i][j2] = staticBoard[i][j2 + 1];
-                }
-            }
         }
-        //int countFull = 0;
-        //for  (int i = 0; i < WIDTH_IN_PIECES; i++) {
-        //    //count the row
-        //    if (staticBoard[i][j] == '#')
-        //        countFull++;
-        //}
-        ////check the row's count
-        //if (countFull == WIDTH_IN_PIECES) {
-        //    //shift the rows above row 'j' down
-        //    for (int z = j; z < WIDTH_IN_PIECES; z++) {
-        //        staticBoard[j][z] = staticBoard[j - 1][z];
-        //    }
-        //    for (int i = 0; i < WIDTH_IN_PIECES; i++) {
-        //        staticBoard[i][HEIGHT_IN_PIECES - 1] = ' ';
-        //    }
-        //}
     }
 }
 
@@ -242,6 +231,14 @@ bool Game::IsRowFull(int row) {
             return false;
     }
     return true;
+}
+
+void Game::SwapRows(char* row1, char* row2, int size) {
+    for (size_t i=0; i<size; i++) {
+        char tmp = row1[i];
+        row1[i] = row2[i];
+        row2[i] = tmp;
+    }
 }
 
 void Game::DrawDynamicBuffer() {
