@@ -2,6 +2,9 @@
 Final project for CS2 class<br>
 There **are** bugs, if you encounter one. Restarting the application by running the build script should suffice.
 
+
+
+**IMPORTANT**
 **MAKE SURE YOUR TERMINAL IS AS BIG AS IT CAN GET**
 
 # Build instructions
