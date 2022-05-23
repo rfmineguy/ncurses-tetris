@@ -208,7 +208,8 @@ void Game::CheckRowComplete() {
 
     //loop over rows
     for (int j = 0; j < HEIGHT_IN_PIECES; j++) {
-        bool full = IsRowFull(j);
+        //bool full = IsRowFull(j);
+        bool full = IsRowFull_Rec(j, 1, WIDTH_IN_PIECES - 1);
         //mvwprintw(stdscr, 1 + j, 40, "j = %d, %s", j, full ? "True" : "False");
         if (full) {
             for (int j2 = HEIGHT_IN_PIECES; j2 >= 0; j2--) {
@@ -222,12 +223,12 @@ void Game::CheckRowComplete() {
     }
 }
 
-bool Game::IsRowFull(int row) {
-    for (int i = 1; i < WIDTH_IN_PIECES - 1; i++) {
-        if (staticBoard[i][row] == ' ')
-            return false;
-    }
-    return true;
+bool Game::IsRowFull_Rec(int row, int startIndex, int endIndex) {
+    if (startIndex == endIndex)
+        return true;
+    if (staticBoard[startIndex][row] == ' ')
+        return false;
+    return IsRowFull_Rec(row, ++startIndex, endIndex);
 }
 
 void Game::DrawDynamicBuffer() {

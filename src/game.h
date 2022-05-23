@@ -59,13 +59,13 @@ class Game {
          */
         void CheckRowComplete();
 
-        /* IsRowFull(int)
-         *   Description : checks to see if all of the elements in a row have something in them
+        /* IsRowFullRec(int)
+         *   Description : recursively checks to see if all of the elements in a row have something in them
          *   Param 'row' : which row are we checking?
          *   Return : whether the row is full or not (true if yes, false if no)
          */
-        bool IsRowFull(int row);
-
+        bool IsRowFull_Rec(int row, int startIndex = 1, int endIndex = WIDTH_IN_PIECES - 1);
+        
         /* Draw____Buffer() 
          *   Description : draws the appropriate buffer contents to the appropriate ncurses window
          *   Params : N/A
