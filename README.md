@@ -5,7 +5,7 @@ There **are** bugs, if you encounter one. Restarting the application by running 
 
 
 **IMPORTANT**<br>
-**MAKE SURE YOUR TERMINAL IS AS BIG AS IT CAN GET**
+**MAKE SURE YOUR TERMINAL IS AS BIG AS IT CAN GET**<br>
 **If something bugs out, just restart the program**
 
 # Build instructions
