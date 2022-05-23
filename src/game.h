@@ -117,10 +117,8 @@ class Game {
 
         char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES];
         char dynamicBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES];
+        
         //0:L, 1:I, 2:T, 3:Square
-        std::array<std::string, 4> piecesSpawnedNames;
-        std::array<int, 4> piecesSpawnedCounts;       //[0]:I, [1]:T, [2]:Square, [3]:L
-
         std::array<std::pair<std::string, int>, 4> spawnedPieces;   //i want my own sorting on this. (no map)
         Tetromino* currentTetrimino;
         Tetromino* nextTetrimino;

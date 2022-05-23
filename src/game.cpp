@@ -45,10 +45,7 @@ Game::Game()
     spawnedPieces[1] = std::make_pair("I", 0);
     spawnedPieces[2] = std::make_pair("T", 0);
     spawnedPieces[3] = std::make_pair("Square", 0);
-    piecesSpawnedNames = {
-        "L", "I", "T", "Square"
-    };
-
+    
     // spawn the initial tetrimino
     SpawnNewTetrimino();
 }
@@ -300,16 +297,6 @@ void Game::ClearDynBuff() {
     }
 }
 
-void PrintPieceShapeArr(Tetromino* t) {
-    std::cout << "Tetromino pattern : \n";
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            std::cout << t->pieceShapeArr[i * 4 + j] << ", ";
-        }
-        std::cout << std::endl;
-    }
-}
-
 int Game::GetPieceCountIndex(const std::string& name) {
     int index = 0;
     for (std::pair<std::string, int>& p : spawnedPieces) {
@@ -321,3 +308,15 @@ int Game::GetPieceCountIndex(const std::string& name) {
     }
     return -1;
 }
+
+void PrintPieceShapeArr(Tetromino* t) {
+    std::cout << "Tetromino pattern : \n";
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            std::cout << t->pieceShapeArr[i * 4 + j] << ", ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+
