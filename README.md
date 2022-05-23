@@ -1,5 +1,6 @@
 # ncurses-tetris
-Final project for CS2 class
+Final project for CS2 class<br>
+There **are** bugs, if you encounter one. Restarting the application by running the build script should suffice.
 
 
 # Build instructions
