@@ -6,6 +6,7 @@ There **are** bugs, if you encounter one. Restarting the application by running 
 
 **IMPORTANT**<br>
 **MAKE SURE YOUR TERMINAL IS AS BIG AS IT CAN GET**
+**If something bugs out, just restart the program**
 
 # Build instructions
 * git clone https://github.com/rfmineguy/ncurses-tetris
