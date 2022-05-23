@@ -1,5 +1,5 @@
 Chapter 8
-Implementation and use of linear search or binary search    [ ]
+Implementation and use of linear search or binary search    [X] NOTE: game.cpp:213
 Implementation and use of bubble sort or selection sort     [x] NOTE: Display how many of each piece has fallen
 
 Chapter 9
@@ -47,7 +47,7 @@ Essay Status                                        [INCOMPLETE]
 Personal Checklist
 Collision revamp:
     I.cpp                                [x]
-    T.cpp                                [ ]
+    T.cpp                                [_]  :doesn't spawn (not enough time to implement)
     Square.cpp                           [x]
     L.cpp                                [x]
 

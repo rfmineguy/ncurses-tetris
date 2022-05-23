@@ -1,3 +1,8 @@
+/* class Position
+ *   Description : simply represents an x and a y
+ *                  most useful case is object agregation
+ */
+
 template <typename T>
 class Position {
     public:

@@ -66,8 +66,6 @@ class Game {
          */
         bool IsRowFull(int row);
 
-        void SwapRows(char* row1, char* row2, int size);
-
         /* Draw____Buffer() 
          *   Description : draws the appropriate buffer contents to the appropriate ncurses window
          *   Params : N/A
@@ -83,10 +81,26 @@ class Game {
          */
         void SpawnNewTetrimino();
 
+        /* BakeToStatic()
+         *   Description : copies the dynamic buffer to the static buffer while ignoring blanks
+         *   Params : N/A
+         *   Return : N/A
+         */
         void BakeToStatic();
+
+        /* ClearDynBuff()
+         *   Description : "zeroes" out the dynamic buffer for the next "render" pass
+         *   Params : N/A
+         *   Return : N/A
+         */
         void ClearDynBuff();
 
     private:
+        /* GetPieceCountIndex(const std::string&)
+         *   Description : finds the element in the pieceCounting vector and returns its index
+         *   Params : the piece your trying to find
+         *   Return : the index of the piece, -1 if not found
+         */
         int GetPieceCountIndex(const std::string& name);
 
     private:

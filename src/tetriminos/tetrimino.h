@@ -7,6 +7,9 @@
 
 class Tetromino {
     public:
+        /* Tetrimino()
+         *   Description: constructs a tetrimino
+         */
         Tetromino();
         Tetromino(int _pieceX);
         Tetromino(int _pieceX, int _pieceY);
@@ -55,6 +58,13 @@ class Tetromino {
          */
         bool WillTouchBoundary(int dx, int dy);
 
+        /* WillTouchStaticPiece(int, int, char[][]) : pure virtual
+         *   Description : checks to see if the motion (dx, dy) will end up intersection an existing piece
+         *   Param 'dx' : the x direction of the movement
+         *   Param 'dy' : the y direction of the movement
+         *   Param 'staticBoard'
+         *   Return : whether the piece has touched another piece
+         */
         virtual bool WillTouchStaticPiece(int dx, int dy, char staticBoard[WIDTH_IN_PIECES][HEIGHT_IN_PIECES]) = 0;
 
         // Getters

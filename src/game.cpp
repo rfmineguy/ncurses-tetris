@@ -212,7 +212,7 @@ void Game::CheckRowComplete() {
     //loop over rows
     for (int j = 0; j < HEIGHT_IN_PIECES; j++) {
         bool full = IsRowFull(j);
-        mvwprintw(stdscr, 1 + j, 40, "j = %d, %s", j, full ? "True" : "False");
+        //mvwprintw(stdscr, 1 + j, 40, "j = %d, %s", j, full ? "True" : "False");
         if (full) {
             for (int j2 = HEIGHT_IN_PIECES; j2 >= 0; j2--) {
                 for (int i = 0; i < WIDTH_IN_PIECES; i++)
@@ -231,14 +231,6 @@ bool Game::IsRowFull(int row) {
             return false;
     }
     return true;
-}
-
-void Game::SwapRows(char* row1, char* row2, int size) {
-    for (size_t i=0; i<size; i++) {
-        char tmp = row1[i];
-        row1[i] = row2[i];
-        row2[i] = tmp;
-    }
 }
 
 void Game::DrawDynamicBuffer() {
